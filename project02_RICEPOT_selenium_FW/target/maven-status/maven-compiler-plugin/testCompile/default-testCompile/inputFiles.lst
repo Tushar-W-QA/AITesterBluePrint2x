@@ -1,0 +1,10 @@
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\config\ConfigReader.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\driver\BrowserFactory.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\driver\DriverManager.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\pages\BasePage.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\pages\LoginPage.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\tests\BaseTest.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\tests\InvalidLoginTest.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\tests\ValidLoginTest.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\utils\ScreenshotUtil.java
+D:\AITesterBluePrint2x\project02_RICEPOT_selenium_FW\src\test\java\com\ricepot\salesforce\utils\WaitUtils.java

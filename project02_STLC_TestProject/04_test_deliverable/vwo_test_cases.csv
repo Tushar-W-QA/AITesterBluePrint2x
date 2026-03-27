@@ -1,0 +1,6 @@
+TID,Category,Description,Pre-conditions,Steps,Expected,Priority
+TC_001,Functional,Verify successful login with valid Email and Password,User has a registered account,"1. Navigate to login\\n2. Enter valid Email ID\\n3. Enter valid Password\\n4. Click 'Sign in'",User is successfully authenticated and redirected to the Dashboard.,Critical
+TC_002,Functional,Verify login with Sign in with Google,User has a valid Google account linked to VWO,1. Navigate to login page\\n2. Click 'Sign in with Google',User is successfully authenticated and redirected to the Dashboard.,High
+TC_004,Negative,Verify login failure with invalid Email ID,Account does not exist,1. Enter invalid Email ID,System displays error message.,Critical
+TC_NEG_001,Negative,Login with incorrect password,Valid Email + Incorrect Password,,Your email, password, IP address or location did not match,Critical
+TC_NEG_004,Negative,Login with empty Email field,[BLANK],,Needs clarification,High

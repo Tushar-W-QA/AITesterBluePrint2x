@@ -1,0 +1,10 @@
+com\ricepot\salesforce\config\ConfigReader.class
+com\ricepot\salesforce\tests\InvalidLoginTest.class
+com\ricepot\salesforce\driver\BrowserFactory.class
+com\ricepot\salesforce\tests\ValidLoginTest.class
+com\ricepot\salesforce\utils\ScreenshotUtil.class
+com\ricepot\salesforce\tests\BaseTest.class
+com\ricepot\salesforce\driver\DriverManager.class
+com\ricepot\salesforce\pages\LoginPage.class
+com\ricepot\salesforce\pages\BasePage.class
+com\ricepot\salesforce\utils\WaitUtils.class

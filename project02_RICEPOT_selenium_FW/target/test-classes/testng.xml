@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RICEPOT_Salesforce_Login_Suite" parallel="methods" thread-count="2" verbose="2">
+
+    <test name="Valid_Login_Tests" group-by-instances="true">
+        <groups>
+            <define name="sanity">
+                <include name="sanity"/>
+            </define>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ricepot.salesforce.tests.ValidLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Invalid_Login_Tests" group-by-instances="true">
+        <groups>
+            <define name="regression">
+                <include name="regression"/>
+            </define>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ricepot.salesforce.tests.InvalidLoginTest"/>
+        </classes>
+    </test>
+
+</suite>

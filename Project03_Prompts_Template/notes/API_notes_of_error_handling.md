@@ -1,0 +1,1 @@
+I was testing the RESTful Booker API, and we have the POST request, PUT request, PATCH request, DELETE request, and GET request, and other requests. While validating the API, I observed that in the POST request, when I am requesting the endpoint, in this response, I have observed that the error status code is different. So make sure all the points should be covered. 

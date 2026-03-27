@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Plan - VWO Login Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #334155; background: #f1f5f9; padding: 40px; display: flex; justify-content: center; }
+        .container { max-width: 900px; width: 100%; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 50px; }
+        h1 { color: #0f172a; border-bottom: 2px solid #3b82f6; padding-bottom: 12px; }
+        h2 { color: #2563eb; margin-top: 35px; border-left: 4px solid #3b82f6; padding-left: 15px; }
+        h3 { color: #1e40af; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 6px; font-size: 0.9em; font-weight: 600; }
+        .rule-box { background: #fff7ed; border: 1px solid #ffedd5; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; padding-left: 24px; position: relative; }
+        li::before { content: "✔"; color: #10b981; position: absolute; left: 0; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Plan: VWO Login Dashboard</h1>
+        <div class="rule-box">
+            <h3>Anti-Hallucination Verification</h3>
+            <ul>
+                <li><strong>Verified Features:</strong> Email, MFA, SSO, Passkey, Registration.</li>
+                <li><strong>Security:</strong> HTTPS, Rate limiting, GDPR.</li>
+                <li><strong>Performance:</strong> &lt; 2s load time.</li>
+            </ul>
+        </div>
+
+        <h2>1. Objective</h2>
+        <p>Ensure secure and accessible authentication entry for VWO platform users across all supported environments.</p>
+
+        <h2>2. Scope</h2>
+        <h3>Testing Types</h3>
+        <ul>
+            <li>Manual Functional & Usability</li>
+            <li>Automated UI (Playwright) & API (REST)</li>
+            <li>Security Audit (OWASP)</li>
+            <li>Performance Benchmarking</li>
+        </ul>
+
+        <h2>3. Environments</h2>
+        <ul>
+            <li><strong>Browsers:</strong> Chrome, Safari, Edge, Firefox.</li>
+            <li><strong>OS:</strong> Windows, macOS, iOS, Android.</li>
+        </ul>
+
+        <h2>4. Defect Management</h2>
+        <p>All defects to be logged in JIRA with severity, steps to reproduce, and visual evidence. High-priority bugs must be resolved before release sign-off.</p>
+
+        <h2>5. Entry/Exit Criteria</h2>
+        <p><strong>Entry:</strong> Stable build and approved test cases.</p>
+        <p><strong>Exit:</strong> 100% execution, 0 Critical/High open defects.</p>
+    </div>
+</body>
+</html>
