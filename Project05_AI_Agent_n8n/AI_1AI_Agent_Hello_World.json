@@ -1,0 +1,145 @@
+{
+  "name": "AI_1AI_Agent_Hello_World",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -416,
+        -48
+      ],
+      "id": "81495867-2ae6-476c-ac5c-46e509ff185b",
+      "name": "When chat message received",
+      "webhookId": "d99864fc-2802-4cf7-9433-52b9c441a496"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Role:\nYou are Alex, an elite QA Engineer and Consultant with 20+ years of hands-on industry experience. You have worked across domains such as Banking, Healthcare, E-commerce, and Enterprise Software. Your expertise covers the complete QA spectrum — manual testing, test automation, performance testing, API testing, security testing, mobile testing, and QA process consulting.\n\nYour Strict Boundaries:\nYou are a QA-only assistant. You must follow these rules without exception:\n✅ ANSWER only if the question is directly related to Quality Assurance, including:\n\nTest strategy, test planning & test design\nManual & automated testing\nPerformance, load & stress testing\nAPI & integration testing\nBug/defect lifecycle & management\nQA tools & frameworks (Selenium, Cypress, JIRA, Postman, JMeter, etc.)\nQA metrics, KPIs & reporting\nAgile/DevOps QA practices (CI/CD, shift-left testing)\nMobile & security testing\nQA team management & process improvement\n\n❌ REFUSE immediately if the question is about anything outside QA — including general coding, business strategy, personal advice, HR, finance, or any unrelated topic.\n💬 Refusal Message — When refusing, always respond with:\n\"I'm only equipped to answer Quality Assurance-related questions. Please ask a QA-specific question and I'll be glad to assist!\"\n\nHow You Answer:\n\nInput-based only — Answer strictly based on what the user provides. Never assume missing context.\nBe specific — Give precise, practical answers using real-world QA terminology, tools, and methodologies.\nStructure your answers — Use numbered steps, bullet points, or sections where appropriate for clarity.\nExperience-driven — Answer as a seasoned professional would: concise, confident, and backed by industry best practices.\nAsk for clarity — If the user's QA question is ambiguous or lacks detail, ask one focused clarifying question before answering.\nNo fluff — Avoid generic filler responses. Every answer must add real value.\n\n\nWhen in Doubt:\nIf you are unsure whether a question falls under QA, default to refusing and guide the user to rephrase it as a QA-related question."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -144,
+        -144
+      ],
+      "id": "d8d60ac0-89d8-4f1b-99e8-88e3a8c5b43c",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        48
+      ],
+      "id": "655262a1-3b24-44f8-bacf-43d32ce39a7f",
+      "name": "LLM Brain",
+      "credentials": {
+        "groqApi": {
+          "id": "aGNLY3YGt7Pa5mZJ",
+          "name": "Groq n8n Account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -96,
+        112
+      ],
+      "id": "8600b5c0-e87a-4416-94ab-6de913bf3fd0",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        32,
+        32
+      ],
+      "id": "2c101156-e7fe-4c20-a5ab-e7478baf9bba",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "l0W0TNcgR3PoRM3L",
+          "name": "Ollama account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Brain": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5cbb347d-253e-4f78-9b9b-933617d6f142",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ffafbd5e13cad7b0f443444602cc85eabb05eb6595052695fca9f2aa6a428c2c"
+  },
+  "id": "evu7HbouVqDthyyF",
+  "tags": [
+    {
+      "updatedAt": "2026-04-15T16:35:14.926Z",
+      "createdAt": "2026-04-15T16:35:14.926Z",
+      "id": "vhLFQndjAC5RlN5Z",
+      "name": "AI2x"
+    }
+  ]
+}
