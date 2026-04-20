@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+import express from 'express';
+import cors from 'cors';
+import axios from 'axios';
 
 const app = express();
 app.use(cors());
@@ -133,13 +133,21 @@ Context: ${additionalContext}`;
       }, { timeout: 120000 });
       responseText = resp.data.message?.content || '';
     } else {
-      const endpointMap = { groq: 'https://api.groq.com/openai/v1/chat/completions', grok: 'https://api.x.ai/v1/chat/completions', openai: 'https://api.openai.com/v1/chat/completions' };
+      const endpointMap = {
+        groq: 'https://api.groq.com/openai/v1/chat/completions',
+        grok: 'https://api.x.ai/v1/chat/completions',
+        openai: 'https://api.openai.com/v1/chat/completions',
+      };
       const endpoint = endpointMap[llm.provider] || 'https://api.openai.com/v1/chat/completions';
       const resp = await axios.post(endpoint, {
         model: llm.model,
         messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
-        temperature: 0.3, max_tokens: 4096,
-      }, { headers: { Authorization: `Bearer ${llm.apiKey}`, 'Content-Type': 'application/json' }, timeout: 90000 });
+        temperature: 0.3,
+        max_tokens: 4096,
+      }, {
+        headers: { Authorization: `Bearer ${llm.apiKey}`, 'Content-Type': 'application/json' },
+        timeout: 90000,
+      });
       responseText = resp.data.choices?.[0]?.message?.content || '';
     }
     if (!responseText) return res.json({ success: false, message: 'LLM empty response.' });
@@ -150,4 +158,4 @@ Context: ${additionalContext}`;
   }
 });
 
-module.exports = app;
+export default app;
